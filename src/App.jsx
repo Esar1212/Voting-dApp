@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ethers } from "ethers";
 import abi from "./VotingABI.json";
 
-const contractAddress = "0x804590E26F1f5d9ea30F5cF8e586B359F17C82F4";
+const contractAddress = "0x424a0db38421bed9838e45E957C6aF21c2748081";
 
 
 
@@ -17,7 +17,7 @@ function App() {
   const [pollEnded, setPollEnded] = useState(false);
   const [walletConnected, setWalletConnected] = useState(false);
   const [account, setAccount] = useState('');
-
+  const [restartPolling, setRestartVoting] = useState(false);
 
  
 function parseEthersError(error) {
@@ -63,7 +63,7 @@ function parseEthersError(error) {
 
   const handleEndPolling= async()=>{
     try{
-      setLoading(true);
+      setRestartVoting(true);
       const tx= await contract.endVoting();
       await tx.wait();
       setPollEnded(true);
@@ -73,7 +73,7 @@ function parseEthersError(error) {
       alert(`Error: ${msg}`);
       console.error('Ending polling failed:', error);
     } finally {
-      setLoading(false);
+      setRestartVoting(false);
     }
     };
     
@@ -90,6 +90,23 @@ function parseEthersError(error) {
       setLoading(false);
     }
   };
+   const restartVoting = async() => {
+    try{
+      setLoading(true);
+      const tx = await contract.resetVote();
+      await tx.wait();
+      setVoted(false);
+      setWinner('');
+      setPollEnded(false);
+      setVoteCounts({});
+    }catch(error){
+      const msg=parseEthersError(error);
+      alert(`Error: ${msg}`);
+      console.error('Restarting voting failed:', error);  
+    }finally{
+      setLoading(false);
+    }
+   }
   
 
   const handleTotalVotes = async (candidateName) => {
@@ -361,6 +378,48 @@ function parseEthersError(error) {
             letterSpacing: 1
           }}>
             🏆 Winner: {winner}
+          </div>
+        )}
+
+        {/* Restart Voting Button INSIDE CARD, STICKY TO BOTTOM */}
+        {walletConnected && pollEnded && (
+          <div
+            style={{
+              position: 'sticky',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: 'rgba(255,255,255,0.97)',
+              padding: '18px 0 10px 0',
+              zIndex: 10,
+              borderBottomLeftRadius: 16,
+              borderBottomRightRadius: 16,
+              boxSizing: 'border-box',
+              marginTop: 32
+            }}
+          >
+            <button
+              onClick={restartVoting}
+              disabled={loading}
+              style={{
+                padding: '14px 38px',
+                borderRadius: 10,
+                background: '#1976d2',
+                color: '#fff',
+                border: 'none',
+                fontWeight: 'bold',
+                fontSize: 18,
+                cursor: loading ? 'not-allowed' : 'pointer',
+                boxShadow: '0 2px 12px rgba(25, 118, 210, 0.13)',
+                letterSpacing: 1.2,
+                transition: 'background 0.2s'
+              }}
+            >
+              {restartPolling ? 'Restarting...' : 'Restart Voting'}
+            </button>
           </div>
         )}
       </div>
