@@ -6,7 +6,7 @@ A fully-functional decentralized voting application built with **Solidity**, **R
 
 ## 🔗 Live Demo
 
-> [🔴 Optional: Insert your deployed Vercel/Netlify/Fleek link here]
+> 🔴 https://stellular-sprite-7a20fb.netlify.app/ 
 
 ---
 
