@@ -10,15 +10,12 @@ A fully-functional decentralized voting application built with **Solidity**, **R
 
 ---
 
-## 📸 Screenshots
+## 📸 Recording
 
-> Add screenshots or screen recording showing:
-- MetaMask connection
-- Voting in action
-- Reset by owner
-- Candidate list view
+https://github.com/user-attachments/assets/d657f82a-9dfb-4f90-add5-8e1df0812d55
 
 ---
+
 
 ## 🧩 Tech Stack
 
