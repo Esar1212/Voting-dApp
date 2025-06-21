@@ -1,12 +1,53 @@
-# React + Vite
+# 🗳️ Decentralized Voting DApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully-functional decentralized voting application built with **Solidity**, **React**, **Ethers.js**, and **MetaMask** on the **Ethereum Sepolia testnet**. This project allows users to vote securely and transparently on-chain while ensuring only one vote per person, and owner-only control over poll resets.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## Expanding the ESLint configuration
+> [🔴 Optional: Insert your deployed Vercel/Netlify/Fleek link here]
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Screenshots
+
+> Add screenshots or screen recording showing:
+- MetaMask connection
+- Voting in action
+- Reset by owner
+- Candidate list view
+
+---
+
+## 🧩 Tech Stack
+
+| Layer        | Tech Used                 |
+|--------------|---------------------------|
+| Smart Contract | Solidity, Remix IDE |
+| Frontend     | React, Vite, Ethers.js    |
+| Wallet       | MetaMask (Web3 wallet)    |
+| Blockchain   | Ethereum (Sepolia Testnet)|
+| Hosting      | [Optional: Vercel/Fleek]  |
+
+---
+
+## 🚀 Features
+
+- 🔐 **One-vote-per-wallet** enforcement using `mapping(address => bool)`
+- 📜 **Only owner can reset voting** via Solidity `modifier`
+- 🧾 **Voting logic stored on-chain** (vote count, voter tracking)
+- 🧠 **Smart contract interaction** using `ethers.js`
+- 🦊 **MetaMask integration** for secure user authentication
+- 📈 **Real-time candidate listing and vote count display**
+- ⚠️ **Error handling** with smart contract `require` messages on frontend
+
+---
+
+## 🧪 How to Run Locally
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/dvoting-dapp.git
+cd dvoting-dapp
