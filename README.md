@@ -25,7 +25,8 @@ https://github.com/user-attachments/assets/d657f82a-9dfb-4f90-add5-8e1df0812d55
 | Frontend     | React, Vite, Ethers.js    |
 | Wallet       | MetaMask (Web3 wallet)    |
 | Blockchain   | Ethereum (Sepolia Testnet)|
-| Hosting      | [Optional: Vercel/Fleek]  |
+| Hosting      | Netlify                   |
+| Test Tokens  | SepoliaETH                |
 
 ---
 
