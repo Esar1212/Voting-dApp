@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [winner, setWinner] = useState(null);
 
   useEffect(() => {
-    const socket = io("http://localhost:4000");
+    const socket = io(import.meta.env.VITE_BACKEND_URL);
     socket.on("connect", () => {
       console.log("✅ Connected to socket server");
     });
