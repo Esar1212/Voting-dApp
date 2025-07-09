@@ -6,7 +6,7 @@ A fully-functional decentralized voting application built with **Solidity**, **R
 
 ## 🔗 Live Demo
 
-> 🔴 https://stellular-sprite-7a20fb.netlify.app/ 
+> 🔴 https://votingdapp12.netlify.app/
 
 ---
 
