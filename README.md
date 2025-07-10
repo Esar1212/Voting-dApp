@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/d657f82a-9dfb-4f90-add5-8e1df0812d55
 | Wallet       | MetaMask (Web3 wallet)    |
 | Blockchain   | Ethereum (Sepolia Testnet)|
 | Hosting      | Frontend on Vercel        |
-|              | WebSocket Server on Render|
+|               WebSocket Server on Render|
 | Test Tokens  | SepoliaETH                |
 
 ---
